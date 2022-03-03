@@ -16,7 +16,7 @@ type EditorProps = {
     language: string;
     displayName: string;
     value: string;
-    onChange(a: string): void;
+    onChange(code: string): void;
 }
 
 export default function Editor(props: EditorProps) {

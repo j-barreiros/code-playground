@@ -5,12 +5,15 @@ import useLocalStorage from './hooks/useLocalStorage';
 
 //Components
 import Editor from './components/Editor';
+import TopBar from './components/TopBar';
 
 function App() {
   const [html, setHtml] = useLocalStorage('html','');
   const [css, setCSS] = useLocalStorage('css','');
   const [js, setJs] = useLocalStorage('js', '');
   const [srcDoc, setSrcDoc] = useState('')
+
+  const [layoutMode, setLayoutMode] = useState('horizontal');
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -27,7 +30,11 @@ function App() {
   }, [html, css, js])
 
   return (
-    <main>
+  <>
+    <section>
+      <TopBar setLayoutMode={setLayoutMode}/>
+    </section>
+    <main className={`layout ${layoutMode === 'horizontal' ? 'horizontal-default' : 'vertical-default'}`}>
       <section className='pane top-pane'>
 
         <Editor
@@ -46,7 +53,7 @@ function App() {
 
         <Editor
           language="js"
-          displayName='JavaScript'
+          displayName='JS'
           value={js}
           onChange={setJs}
         />
@@ -63,6 +70,7 @@ function App() {
         />
       </section>
     </main>
+  </>
   );
 }
 

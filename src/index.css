@@ -2,13 +2,39 @@
   margin: 0;
 }
 
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.layout {
+  display: flex;
+}
+
+.layout.horizontal-default {
+  flex-direction: column;
+}
+.layout.vertical-default {
+  flex-direction: row;
+}
+
 .top-pane {
   background-color: hsl(225, 6%, 25%);
 }
 
 .pane {
-  height: 50vh;
   display: flex;
+}
+
+.horizontal-default > .pane {
+  height: 50vh;
+}
+
+.vertical-default > .pane {
+  height: 100vh;
+  width: 50vw;
 }
 
 .editor-container {
