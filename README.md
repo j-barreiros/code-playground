@@ -1,6 +1,6 @@
 # Code Playground
 
-An Code Pen clone made with React and Typescript
+An Code Pen clone made with React and TypeScript
 
 ---
 
@@ -12,7 +12,7 @@ An Code Pen clone made with React and Typescript
         - useEffect
         - Custom Hooks
 
-- Typescript
+- TypeScript
 
 - LocalStorage
 
