@@ -32,7 +32,7 @@ function App() {
   return (
   <>
     <section>
-      <TopBar setLayoutMode={setLayoutMode}/>
+      <TopBar setLayoutMode={setLayoutMode} layoutMode={layoutMode}/>
     </section>
     <main className={`layout ${layoutMode === 'horizontal' ? 'horizontal-default' : 'vertical-default'}`}>
       <section className='pane top-pane'>
@@ -52,7 +52,7 @@ function App() {
         />
 
         <Editor
-          language="js"
+          language="javascript"
           displayName='JS'
           value={js}
           onChange={setJs}

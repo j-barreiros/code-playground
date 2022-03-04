@@ -1,15 +1,29 @@
-export default function TopBar(props:any) {
+type TopBarProps = {
+    layoutMode: string;
+    setLayoutMode(mode: string): void;
+}
 
-    const  {setLayoutMode} = props;
+export default function TopBar(props: TopBarProps) {
+
+    const { setLayoutMode, layoutMode } = props;
     return (
         <section className='topBar'>
             <div>
-                <h2>Code Playground</h2>
+                <h2 className='topbar-title'>Code Playground</h2>
             </div>
 
             <div>
-                <button onClick={() => setLayoutMode('horizontal')}>Horizontal</button>
-                <button onClick={() => setLayoutMode('vertical')}>Vertical</button>
+                <button
+                    className={`layout-button ${layoutMode === 'horizontal' && 'btn-active'}`}
+                    onClick={() => setLayoutMode('horizontal')}>
+                    Horizontal
+                </button>
+
+                <button
+                    className={`layout-button ${layoutMode === 'vertical' && 'btn-active'}`}
+                    onClick={() => setLayoutMode('vertical')}>
+                    Vertical
+                </button>
             </div>
         </section>
     )
