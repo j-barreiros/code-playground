@@ -15,6 +15,7 @@ An Code Pen clone made with React and Typescript
 - Typescript
 
 - LocalStorage
+
 ---
 
 ## Getting started
@@ -37,3 +38,13 @@ An Code Pen clone made with React and Typescript
 ```
     npm start
 ```
+
+---
+
+## Project Layout
+
+### Vertical Mode
+![vertical mode](./readme-img/vertical-layout.png)
+
+### Horizontal Mode
+![horizontal mode](./readme-img/horizontal-layout.png)
